@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JOBBO | Oportunidades Laborales</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f0f2f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #ffffff;
+      padding: 10px 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .emergency-button {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: auto;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    .job-card {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .job-card h3 {
+      margin-top: 0;
+    }
+
+    .job-card button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button[type="submit"] {
+      margin-top: 15px;
+      background-color: #28a745;
+    }
+
+    blockquote {
+      margin: 10px 0;
+      padding-left: 20px;
+      border-left: 4px solid #007bff;
+      font-style: italic;
+      color: #555;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 60px;
+    }
+
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .emergency-button {
+        width: 100%;
+        margin: 10px 0 0;
+      }
+    }
+  </style>
+  <script>
+    function validateCVForm(event) {
+      event.preventDefault();
+      alert("CV enviado con éxito.");
+      event.target.reset();
+    }
+
+    function submitOpinion(event) {
+      event.preventDefault();
+      alert("¡Gracias por tu opinión!");
+      event.target.reset();
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>JOBBO</h1>
+    <p>Donde las primeras oportunidades se encuentran</p></p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#ofertas">Ofertas</a></li>
+      <li><a href="#cv">Enviar CV</a></li>
+      <li><a href="#opiniones">Opiniones</a></li>
+      <li><a href="#soporte">Soporte</a></li>
+      <button class="emergency-button" onclick="alert('¡Emergencia activada!')">Emergencia</button>
+
+    </ul>
+  </nav>
+
+  <main>
+    <section id="ofertas">
+      <h2>Ofertas de Trabajo</h2>
+
+      <article class="job-card">
+        <h3>Desarrollador Web</h3>
+        <p><strong>Ubicación:</strong> Remoto</p>
+        <p>Buscamos un desarrollador con conocimientos en HTML, CSS y JavaScript.</p>
+        <button>Aplicar</button>
+      </article>
+
+      <article class="job-card">
+        <h3>Diseñador Gráfico</h3>
+        <p><strong>Ubicación:</strong> Ciudad de México</p>
+        <p>Experiencia con Adobe Photoshop e Illustrator requerida.</p>
+        <button>Aplicar</button>
+      </article>
+
+      <article class="job-card">
+        <h3>Garzón</h3>
+        <p><strong>Ubicación:</strong> Coquimbo, Chile</p>
+        <p>Ofrezco mi servicio con experiencia en varios locales.</p>
+        <button>Aplicar</button>
+      </article>
+    </section>
+
+    <section id="cv">
+      <h2>Enviar tu CV</h2>
+      <form onsubmit="validateCVForm(event)">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="cv">Sube tu CV:</label>
+        <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+
+        <label for="message">Mensaje:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <section id="opiniones">
+      <h2>Opiniones</h2>
+      <form onsubmit="submitOpinion(event)">
+        <label for="opinion">Déjanos tu opinión:</label>
+        <input type="text" id="opinion" name="opinion" required>
+        <button type="submit">Enviar</button>
+      </form>
+
+      <blockquote>"Gracias a JOBBO, encontré el trabajo de mis sueños." – Juan Pérez</blockquote>
+      <blockquote>"La plataforma es fácil de usar y llena de oportunidades." – María López</blockquote>
+      <blockquote>"Pude encontrar un trabajo de medio tiempo mientras estudio." – Constanza Herrera</blockquote>
+    </section>
+
+    <section id="soporte">
+      <h2>Soporte</h2>
+      <p>¿Tienes dudas o necesitas ayuda? Estamos para ayudarte.</p>
+      <button onclick="window.location.href='mailto:soporte@jobbo.com'">Contacto Soporte</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 JOBBO. Todos los derechos reservados.</p>
+    <div>
+      <a href="#">Política de Privacidad</a> |
+      <a href="#">Términos de Uso</a> |
+      <a href="#">Redes Sociales</a>
+    </div>
+  </footer>
+
+</body>
+</html>
